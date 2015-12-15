@@ -10,7 +10,7 @@ If the device could not be found, the program sends a message to the system in o
 ##What are the requirements?
 1. Flash drive
 2. Computer running Windows or Linux (tested on Windows 7 and Arch Linux. Others distributions should work like charm)
-3. Python interpreter (Windows users can compile the application using py2exe)
+3. Python 2 interpreter (Windows users can compile the application using py2exe)
 
 ##How to use?
 * Edit the source in order to change the variables values  
