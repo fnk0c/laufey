@@ -59,11 +59,7 @@ else:
 
 while True:
 	#Retrieve devices list and check if flashdrive is on it
-	if sys == "windows":
-		disks = check_output(list_device)
-
-	elif sys == "linux":
-		disks = check_output(list_device)
+	disks = check_output(list_device)
 
 	#If not in list, checks if screen is already locked and lock if not
 	if flashDisk not in disks:
