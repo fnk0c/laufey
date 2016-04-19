@@ -62,7 +62,7 @@ while True:
 	disks = check_output(list_device)
 
 	#If not in list, checks if screen is already locked and lock if not
-	if flashDisk not in disks:
+	if flashDisk not in str(disks):
 		if sys == "linux":
 			try:
 				status_response = check_output(status)
