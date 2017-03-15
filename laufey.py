@@ -17,7 +17,7 @@ according to your needs"""
 #Device name
 #On linux the device name is retrieved using the command "lsusb"
 #On Windows it's the label name of flash drive
-flashDisk = "Toshiba"
+flashDisk = "Toshiba OR use its ID 1234:5678"
 
 """
 Linux users must change the lock command if not
@@ -67,7 +67,7 @@ while True:
 			try:
 				status_response = check_output(status)
 
-				if "locked" in status_response.split():
+				if "locked" in  status_response.decode("utf-8").split():
 					print("Locked")
 				else:
 					check_call(lock)
