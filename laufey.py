@@ -17,7 +17,8 @@ according to your needs"""
 #Device name
 #On linux the device name is retrieved using the command "lsusb"
 #On Windows it's the label name of flash drive
-flashDisk = "Toshiba OR use its ID 1234:5678"
+
+flashDisk = "CHANGE_ME"
 
 """
 Linux users must change the lock command if not
@@ -29,7 +30,7 @@ if platform == "win32":
 
 	"""Windows"""
 	#List all removable devices
-	list_device = ["wmic", "logicaldisk", "get", "volumename"]
+	list_device = "wmic logicaldisk get volumeserialnumber"
 
 	#Lock screen
 	lock = "rundll32.exe user32.dll,LockWorkStation"
@@ -59,13 +60,13 @@ else:
 
 while True:
 	#Retrieve devices list and check if flashdrive is on it
-	disks = check_output(list_device)
+	disks = check_output(list_device, shell = True)
 
 	#If not in list, checks if screen is already locked and lock if not
 	if flashDisk not in str(disks):
 		if sys == "linux":
 			try:
-				status_response = check_output(status)
+				status_response = check_output(status, shell = True)
 
 				if "locked" in  status_response.decode("utf-8").split():
 					print("Locked")
@@ -74,7 +75,7 @@ while True:
 			except Exception as e:
 				print("An error occoured\n" + str(e))
 		elif sys == "windows":
-			check_call(lock)
+			check_call(lock, shell = True)
 	else:
 		pass
 	sleep(2)
