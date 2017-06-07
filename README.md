@@ -35,7 +35,12 @@ The following command can be used to determinate the serial number
 
 **Linux users**  
 The following command can be used  
-`$ lsusb | cut -d " " -f 7-`
+
+`lsusb | cut -d " " -f 6-`
+
+![Imgur](http://i.imgur.com/awEgzSM.jpg)
+
+Below the red thing you will find something like *a1b2:3456*. That's exactly the information you are looking for.  
 
 ***If not using Xscreensaver***, please edit the following lines  
 ```
