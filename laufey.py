@@ -48,10 +48,10 @@ elif platform == "linux2" or platform == "linux":
 	list_device = "lsusb"
 
 	#Lock screen
-	lock = ["xscreensaver-command", "-lock"]
+	lock = "xscreensaver-command -lock"
 	
 	#Check if screen is locked
-	status = ["xscreensaver-command", "-time"]
+	status = "xscreensaver-command -time"
 else:
 	print("Your system is not supported!")
 	exit()
@@ -71,7 +71,7 @@ while True:
 				if "locked" in  status_response.decode("utf-8").split():
 					print("Locked")
 				else:
-					check_call(lock)
+					check_call(lock, shell = True)
 			except Exception as e:
 				print("An error occoured\n" + str(e))
 		elif sys == "windows":
