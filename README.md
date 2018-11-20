@@ -1,8 +1,8 @@
 # Laufey
-Lock user screen every time the flash drive is unplugged. Creating a two-step authentication on the machine
+Lock user screen every time the flash drive is unplugged, creating a second factor authentication on the machine
 
 ## How it works?
-Every time you start the application, it initiates a process that is constantly verifying if the usb device is connected to the computer.
+Every time you start the application, it initiates a process that is constantly verifying if the USB device is connected to the computer.
 
 ##### What if it's not connected?
 If the device could not be found, the program sends a message to the system in order to lock the screen. This way, you can only use the computer if you have the **password and the flash drive**
